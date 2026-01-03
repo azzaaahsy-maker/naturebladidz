@@ -4,204 +4,243 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NatureBladi.dz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Arabic Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
   <script>
     tailwind.config = {
-      theme: { extend: { colors: { dzGreen: "#006233", dzRed: "#D21034" } } }
-    };
+      theme: {
+        extend: {
+          fontFamily: { tajawal: ["Tajawal", "sans-serif"] },
+          colors: {
+            dzGreen: "#006233",
+            dzRed: "#D21034"
+          }
+        }
+      }
+    }
   </script>
+
   <style>
-    body { font-family: 'Tajawal', sans-serif; background:#f8fafc; }
     html { scroll-behavior: smooth; }
+    body { font-family: Tajawal, sans-serif; }
   </style>
 </head>
-<body class="min-h-screen">
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
-    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#home" class="text-xl font-black tracking-tight text-dzGreen">
+
+<body class="bg-slate-50 text-slate-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-black text-xl tracking-tight">
         NatureBladi<span class="text-dzRed">.dz</span>
       </a>
-      <nav class="flex gap-2 text-sm font-bold">
-        <a class="px-3 py-2 rounded-xl hover:bg-slate-100 text-slate-700" href="#services">الخدمات</a>
-        <a class="px-3 py-2 rounded-xl hover:bg-slate-100 text-slate-700" href="#about">عنّا</a>
-        <a class="px-3 py-2 rounded-xl hover:bg-slate-100 text-slate-700" href="#contact">تواصل</a>
+
+      <nav class="hidden md:flex items-center gap-2 text-sm font-bold">
+        <a href="#services" class="px-3 py-2 rounded-xl hover:bg-slate-100">الخدمات</a>
+        <a href="#about" class="px-3 py-2 rounded-xl hover:bg-slate-100">عنّا</a>
+        <a href="#contact" class="px-3 py-2 rounded-xl hover:bg-slate-100">تواصل</a>
       </nav>
+
+      <a href="#contact" class="text-sm font-extrabold px-4 py-2 rounded-xl bg-slate-900 text-white hover:opacity-90">
+        تواصل معنا
+      </a>
     </div>
   </header>
 
-  <main id="home" class="max-w-5xl mx-auto px-4">
-    <section class="pt-10 pb-8">
-      <div class="grid md:grid-cols-2 gap-6 items-center">
-        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-7">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-100 text-dzGreen text-xs font-extrabold">
-            🇩🇿 منصة جزائرية للصحة والمطبخ
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-100 via-white to-red-50"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-10 md:py-16">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-dzGreen font-bold text-sm">
+            <span>🇩🇿</span>
+            منصة جزائرية للصحة والمطبخ
           </div>
-          <h1 class="mt-4 text-3xl md:text-4xl font-black leading-tight text-slate-900">
-            العائلة <span class="text-dzRed">الجزائرية الذكية</span>
+
+          <h1 class="mt-4 text-3xl md:text-5xl font-black leading-tight">
+            العائلــة الجزائريــة
+            <span class="text-dzRed">الذكيــة</span>
           </h1>
-          <p class="mt-3 text-slate-600 leading-relaxed">
-            نصائح صحية وغذائية، راحة نفسية، عالم حواء، وأفكار من مطبخنا — بطريقة بسيطة وواضحة.
+
+          <p class="mt-4 text-slate-600 text-base md:text-lg leading-relaxed">
+            نصائح صحية وغذائية، راحة نفسية، عالم أعشاب، وأفكار من مطبخنا — بطريقة بسيطة وواضحة.
           </p>
 
-          <div class="mt-5 bg-amber-50 border border-amber-100 rounded-2xl p-4">
-            <p class="font-extrabold text-dzGreen text-sm">❝ المعدة بيت الداء والدواء ❞</p>
+          <div class="mt-5 p-4 rounded-2xl bg-amber-50 border border-amber-200">
+            <p class="font-extrabold text-dzGreen text-sm">
+              “ المعدة بيت الداء والدواء ”
+            </p>
           </div>
 
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="#services" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-dzGreen text-white px-6 py-3 rounded-2xl font-extrabold shadow-sm hover:bg-green-800 transition">
+            <!-- ✅ زر Button (مثل ما قلنا) -->
+            <button
+              id="startBtn"
+              class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-dzGreen text-white px-6 py-3 rounded-2xl font-extrabold shadow-sm hover:opacity-95 transition">
               ابدأ الآن
               <span aria-hidden="true">←</span>
-            </a>
-            <a href="#contact" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-2xl font-extrabold hover:bg-slate-50 transition">
+            </button>
+
+            <a
+              href="#contact"
+              class="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white border border-slate-200 px-6 py-3 rounded-2xl font-extrabold hover:bg-slate-50 transition">
               تواصل معنا
             </a>
           </div>
 
-          <p class="mt-4 text-xs text-slate-400">
-            ملاحظة: هذا موقع ثابت (بدون مفاتيح API) ومناسب للنشر على GitHub Pages.
+          <p class="mt-4 text-xs text-slate-500">
+            ملاحظة: هذا موقع ثابت (بدون API) ومناسب للنشر على Netlify و GitHub Pages.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-green-50 to-white rounded-3xl border border-slate-100 shadow-sm p-7">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="rounded-2xl bg-white border border-slate-100 p-4">
-              <p class="text-xs text-slate-500 font-bold">صحة</p>
-              <p class="mt-2 font-black text-slate-900">نصائح غذائية</p>
-              <p class="mt-1 text-sm text-slate-600">أفكار سهلة للتوازن اليومي</p>
+        <!-- Right Card -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6">
+          <h2 class="font-black text-xl">ماذا ستجد هنا؟</h2>
+
+          <div class="mt-4 grid gap-3">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <p class="font-extrabold">🍵 أعشاب ووصفات</p>
+              <p class="text-sm text-slate-600 mt-1">معلومات مبسطة وتجارب منزلية.</p>
             </div>
-            <div class="rounded-2xl bg-white border border-slate-100 p-4">
-              <p class="text-xs text-slate-500 font-bold">نفسية</p>
-              <p class="mt-2 font-black text-slate-900">راحة البال</p>
-              <p class="mt-1 text-sm text-slate-600">عادات بسيطة للهدوء</p>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <p class="font-extrabold">🥗 تغذية صحية</p>
+              <p class="text-sm text-slate-600 mt-1">أفكار يومية سريعة ومناسبة.</p>
             </div>
-            <div class="rounded-2xl bg-white border border-slate-100 p-4">
-              <p class="text-xs text-slate-500 font-bold">حواء</p>
-              <p class="mt-2 font-black text-slate-900">أمومة</p>
-              <p class="mt-1 text-sm text-slate-600">نصائح للأم والطفل</p>
-            </div>
-            <div class="rounded-2xl bg-white border border-slate-100 p-4">
-              <p class="text-xs text-slate-500 font-bold">مطبخ</p>
-              <p class="mt-2 font-black text-slate-900">وصفات جزائرية</p>
-              <p class="mt-1 text-sm text-slate-600">أطباق من مكونات البيت</p>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <p class="font-extrabold">🧠 راحة نفسية</p>
+              <p class="text-sm text-slate-600 mt-1">نصائح بسيطة لتحسين المزاج والروتين.</p>
             </div>
           </div>
 
-          <div class="mt-6 rounded-2xl bg-dzGreen text-white p-5">
-            <p class="font-black text-lg">نسخة “عادية” ✅</p>
-            <p class="mt-1 text-sm opacity-90">بدون أخطاء API، جاهزة للنشر.</p>
+          <div class="mt-5 p-4 rounded-2xl bg-green-50 border border-green-200">
+            <p class="text-sm text-slate-700">
+              ✅ هدفنا: محتوى واضح، محترم، وعملي — للعائلة الجزائرية.
+            </p>
           </div>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="services" class="py-8">
-      <h2 class="text-2xl font-black text-slate-900">الخدمات</h2>
-      <p class="mt-2 text-slate-600">اختر المجال اللي يهمّك:</p>
-
-      <div class="mt-5 grid md:grid-cols-2 gap-4">
-        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-          <h3 class="font-black text-dzGreen text-lg">🍏 صحة</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
-            <li>• نصائح غذائية يومية بسيطة.</li>
-            <li>• أفكار وجبات متوازنة.</li>
-            <li>• توعية صحية عامة.</li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-          <h3 class="font-black text-purple-700 text-lg">🧠 نفسية</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
-            <li>• تمارين تنفّس واسترخاء.</li>
-            <li>• عادات لتحسين النوم.</li>
-            <li>• دعم نفسي عام (غير طبي).</li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-          <h3 class="font-black text-pink-700 text-lg">🌸 حواء</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
-            <li>• نصائح أمومة وتربية.</li>
-            <li>• تغذية الأم والطفل.</li>
-            <li>• روتين صحي لطيف.</li>
-          </ul>
-        </div>
-
-        <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-6">
-          <h3 class="font-black text-orange-600 text-lg">👨‍🍳 مطبخ</h3>
-          <ul class="mt-3 space-y-2 text-sm text-slate-700 leading-relaxed">
-            <li>• وصفات جزائرية سهلة.</li>
-            <li>• أفكار من مكونات البيت.</li>
-            <li>• نصائح ترتيب المطبخ.</li>
-          </ul>
-        </div>
+  <!-- Services -->
+  <section id="services" class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-black">الخدمات</h2>
+        <p class="mt-2 text-slate-600">اختصرناها لك في نقاط واضحة.</p>
       </div>
-    </section>
+      <a href="#contact" class="hidden md:inline-flex font-extrabold text-dzGreen hover:underline">
+        اطلب خدمة
+      </a>
+    </div>
 
-    <section id="about" class="py-8">
-      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-7">
-        <h2 class="text-2xl font-black text-slate-900">عنّا</h2>
-        <p class="mt-3 text-slate-600 leading-relaxed">
-          NatureBladi.dz مساحة جزائرية تهتم بالصحة، الراحة النفسية، الأمومة والطبخ.
-          الهدف: محتوى مفيد وبسيط، وبأسلوب قريب للدارجة.
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <p class="text-sm font-black text-dzGreen">01</p>
+        <h3 class="mt-2 font-black text-lg">مقالات صحية</h3>
+        <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+          نصائح يومية، أسئلة شائعة، وأجوبة مبسطة.
         </p>
-        <div class="mt-5 grid sm:grid-cols-3 gap-3">
-          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
-            <p class="text-xs text-slate-500 font-bold">محتوى</p>
-            <p class="mt-1 font-black text-slate-900">مبسط وواضح</p>
-          </div>
-          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
-            <p class="text-xs text-slate-500 font-bold">لغة</p>
-            <p class="mt-1 font-black text-slate-900">عربية + دارجة</p>
-          </div>
-          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4">
-            <p class="text-xs text-slate-500 font-bold">نشر</p>
-            <p class="mt-1 font-black text-slate-900">GitHub Pages</p>
-          </div>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <p class="text-sm font-black text-dzGreen">02</p>
+        <h3 class="mt-2 font-black text-lg">وصفات جزائرية صحية</h3>
+        <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+          وصفات خفيفة، بدائل صحية، وتنظيم الوجبات.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm">
+        <p class="text-sm font-black text-dzGreen">03</p>
+        <h3 class="mt-2 font-black text-lg">أعشاب ومكونات</h3>
+        <p class="mt-2 text-slate-600 text-sm leading-relaxed">
+          طريقة الاستخدام، التحذيرات، ومتى نتجنبها.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+      <h2 class="text-2xl md:text-3xl font-black">عنّا</h2>
+      <p class="mt-3 text-slate-600 leading-relaxed">
+        NatureBladi.dz منصة جزائرية تهتم بالصحة، التغذية، والأكل التقليدي بطريقة حديثة وبسيطة.
+        هدفنا تقديم محتوى عملي يساعد العائلة في حياتها اليومية.
+      </p>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="p-5 rounded-3xl bg-slate-50 border border-slate-200">
+          <p class="font-black">✨ محتوى واضح</p>
+          <p class="text-sm text-slate-600 mt-1">بدون تعقيد وبأسلوب قريب.</p>
+        </div>
+        <div class="p-5 rounded-3xl bg-slate-50 border border-slate-200">
+          <p class="font-black">🧾 نقاط مفيدة</p>
+          <p class="text-sm text-slate-600 mt-1">تطبّقها مباشرة في يومك.</p>
+        </div>
+        <div class="p-5 rounded-3xl bg-slate-50 border border-slate-200">
+          <p class="font-black">🛡️ احترام السلامة</p>
+          <p class="text-sm text-slate-600 mt-1">نركز على التحذيرات ومتى نتجنب الشيء.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="py-10">
-      <div class="bg-white rounded-3xl border border-slate-100 shadow-sm p-7">
-        <h2 class="text-2xl font-black text-slate-900">تواصل معنا</h2>
-        <p class="mt-2 text-slate-600">بدّل الروابط بمعلوماتك الحقيقية وقت تحب.</p>
+  <!-- Contact -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+    <h2 class="text-2xl md:text-3xl font-black">تواصل معنا</h2>
+    <p class="mt-2 text-slate-600">راسلنا واقترح مواضيع أو خدمات تحبها.</p>
 
-        <div class="mt-6 grid md:grid-cols-3 gap-4">
-          <a class="group rounded-2xl border border-green-100 bg-green-50 p-5 hover:bg-green-100 transition" href="https://wa.me/213000000000" target="_blank" rel="noopener">
-            <p class="font-black text-slate-900">واتساب</p>
-            <p class="mt-1 text-sm text-slate-600">راسلنا مباشرة</p>
-            <p class="mt-3 text-xs font-bold text-dzGreen">فتح الرابط ←</p>
-          </a>
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <a href="mailto:contact@naturebladi.dz"
+         class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:bg-slate-50 transition">
+        <p class="font-black">📧 الإيميل</p>
+        <p class="mt-1 text-slate-600 text-sm">contact@naturebladi.dz</p>
+      </a>
 
-          <a class="group rounded-2xl border border-blue-100 bg-blue-50 p-5 hover:bg-blue-100 transition" href="#" target="_blank" rel="noopener">
-            <p class="font-black text-slate-900">فايسبوك</p>
-            <p class="mt-1 text-sm text-slate-600">تابع جديدنا</p>
-            <p class="mt-3 text-xs font-bold text-blue-700">فتح الرابط ←</p>
-          </a>
+      <a href="https://wa.me/213000000000"
+         class="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm hover:bg-slate-50 transition">
+        <p class="font-black">💬 واتساب</p>
+        <p class="mt-1 text-slate-600 text-sm">اضغط هنا لفتح المحادثة</p>
+      </a>
+    </div>
 
-          <a class="group rounded-2xl border border-slate-200 bg-slate-50 p-5 hover:bg-slate-100 transition" href="mailto:contact@naturebladi.dz">
-            <p class="font-black text-slate-900">البريد</p>
-            <p class="mt-1 text-sm text-slate-600">للشراكة والإعلانات</p>
-            <p class="mt-3 text-xs font-bold text-slate-700">إرسال ←</p>
-          </a>
-        </div>
+    <div class="mt-6 p-4 rounded-2xl bg-green-50 border border-green-200">
+      <p class="text-sm text-slate-700">
+        ✅ إذا حبيت، نزيدلك صفحة ثانية (مثلاً: خدمات.html) ونربط الزر بها.
+      </p>
+    </div>
+  </section>
 
-        <div class="mt-8 rounded-2xl bg-slate-50 border border-slate-100 p-4">
-          <p class="text-sm text-slate-700">
-            ✅ إذا حبيت نزيد زر "احجز الآن" أو نموذج تواصل بسيط بدون تعقيد، نقادر نجهزو.
-          </p>
-        </div>
-      </div>
-    </section>
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+      <p class="text-sm opacity-90">© <span id="year"></span> NatureBladi.dz — جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
 
-    <footer class="pb-12 text-center text-xs text-slate-400">
-      <p>© <span id="y"></span> NatureBladi.dz • صنع بحب في الجزائر 🇩🇿</p>
-    </footer>
-  </main>
-
+  <!-- ✅ JavaScript (ربط زر ابدأ الآن) -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("startBtn").addEventListener("click", function () {
+      // يهبط لقسم الخدمات
+      window.location.href = "#services";
+    });
   </script>
+
 </body>
 </html>
