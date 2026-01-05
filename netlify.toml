@@ -1,7 +1,0 @@
-
-  
-netlify.toml
-index.html
-netlify/
-  functions/
-    ask-gemini.js
