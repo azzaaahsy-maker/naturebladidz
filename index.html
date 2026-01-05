@@ -241,6 +241,31 @@
       window.location.href = "#services";
     });
   </script>
+<div style="max-width:700px;margin:20px auto;padding:12px;border:1px solid #ddd;border-radius:12px;font-family:system-ui">
+  <h3>اختبار Gemini</h3>
+  <textarea id="p" style="width:100%;height:80px">اعطني نصيحة صحية قصيرة عن الحمية</textarea>
+  <button id="t" style="margin-top:10px;padding:10px 14px">جرب</button>
+  <pre id="o" style="white-space:pre-wrap;margin-top:10px"></pre>
+</div>
+
+<script>
+document.getElementById("t").addEventListener("click", async () => {
+  const prompt = document.getElementById("p").value;
+  const out = document.getElementById("o");
+  out.textContent = "جارٍ الإرسال...";
+  try {
+    const r = await fetch("/.netlify/functions/ask-gemini", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ prompt })
+    });
+    const data = await r.json();
+    out.textContent = data.text || JSON.stringify(data, null, 2);
+  } catch (e) {
+    out.textContent = "خطأ: " + e.message;
+  }
+});
+</script>
 
 </body>
 </html>
