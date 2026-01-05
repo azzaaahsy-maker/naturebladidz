@@ -1,4 +1,7 @@
-[build]
-  publish = "."
-  functions = "netlify/functions"
+
   
+netlify.toml
+index.html
+netlify/
+  functions/
+    ask-gemini.js
